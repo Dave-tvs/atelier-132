@@ -218,13 +218,21 @@ export default function Home() {
                   )
                 )}
               </ul>
-              <a
-                href={SITE.planityUrl}
-                className="mt-10 inline-flex h-12 items-center gap-2 rounded-full bg-ink px-6 text-sm font-medium text-cream transition-colors duration-200 hover:bg-rose-700"
-              >
-                <CalendarCheck className="h-4 w-4" aria-hidden />
-                Prendre rendez-vous
-              </a>
+              <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-4">
+                <a
+                  href={SITE.planityUrl}
+                  className="inline-flex h-12 items-center gap-2 rounded-full bg-ink px-6 text-sm font-medium text-cream transition-colors duration-200 hover:bg-rose-700"
+                >
+                  <CalendarCheck className="h-4 w-4" aria-hidden />
+                  Prendre rendez-vous
+                </a>
+                <Link
+                  href="/mentions-legales/"
+                  className="text-sm text-muted-foreground underline decoration-rose-400 decoration-2 underline-offset-4 transition-colors hover:text-rose-700"
+                >
+                  Mentions légales
+                </Link>
+              </div>
             </div>
           </Reveal>
         </section>
