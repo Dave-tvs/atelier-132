@@ -1,26 +1,117 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:is(.dark *));
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-playfair);
+  --font-heading: var(--font-playfair);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Palette Atelier 132 : crème, sable (mur en pierre), noir doux, rose poudré. */
+@theme {
+  --color-cream: #fbf8f3;
+  --color-sand: #efe6da;
+  --color-stone: #b9a68c;
+  --color-ink: #221d19;
+  /* Le rose des boutons du Hero (bg-rose-400) = rose poudré de la marque */
+  --color-rose-400: #d68a97;
+  --color-rose-500: #c47a88;
+  --color-rose-700: #9a4e5c;
+
+  /* Carrousel double rangée : baisser 28s pour accélérer, augmenter pour ralentir */
+  --animate-marquee: marquee 28s linear infinite;
+  --animate-marquee-reverse: marquee-reverse 28s linear infinite;
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  @keyframes marquee-reverse {
+    0% {
+      transform: translateX(-50%);
+    }
+    100% {
+      transform: translateX(0);
+    }
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+:root {
+  --background: #fbf8f3;
+  --foreground: #221d19;
+  --card: #ffffff;
+  --card-foreground: #221d19;
+  --popover: #ffffff;
+  --popover-foreground: #221d19;
+  --primary: #221d19;
+  --primary-foreground: #fbf8f3;
+  --secondary: #efe6da;
+  --secondary-foreground: #221d19;
+  --muted: #efe6da;
+  --muted-foreground: #6b5f55;
+  --accent: #f3e4e2;
+  --accent-foreground: #221d19;
+  --destructive: #b42318;
+  --border: #e4d9cb;
+  --input: #e4d9cb;
+  --ring: #c47a88;
+  --radius: 0.75rem;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    @apply scroll-smooth font-sans;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-rose-500;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-marquee,
+  .animate-marquee-reverse,
+  .animate-bounce {
+    animation: none;
+  }
 }
