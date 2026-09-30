@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import {
   ArrowUpRight,
   CalendarCheck,
@@ -440,9 +441,12 @@ export default function Home() {
             </a>
           </div>
         </div>
-        <p className="mx-auto mt-10 max-w-6xl border-t border-white/10 pt-6 text-xs">
-          © {new Date().getFullYear()} Atelier 132 · Salon de coiffure & barbier, Marseille 13005
-        </p>
+        <div className="mx-auto mt-10 flex max-w-6xl flex-col gap-3 border-t border-white/10 pt-6 text-xs sm:flex-row sm:justify-between">
+          <p>© {new Date().getFullYear()} Atelier 132 · Salon de coiffure & barbier, Marseille 13005</p>
+          <Link href="/mentions-legales/" className="underline-offset-4 hover:text-rose-400 hover:underline">
+            Mentions légales
+          </Link>
+        </div>
       </footer>
 
       <MobileCta />
