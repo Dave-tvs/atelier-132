@@ -10,6 +10,7 @@ Next.js (export statique) · Tailwind CSS v4 · shadcn · framer-motion. Déploy
   - `hero2.webp` : grande photo de la section « L'atelier »
   - `hero3.webp` : fond du bandeau final « Votre prochain rendez-vous »
   - Galerie : `salon-interieur`, `bacs`, `facade`, `produits`, `espace-barbier`, `rue` (liste dans `app/page.tsx`, constante `PHOTOS`)
+- **Logo** : fichiers vectoriels prêts à l'emploi dans `public/logo/` (médaillon seul, horizontal, horizontal blanc pour fond sombre, vertical). Le médaillon du site est `components/site/logo-emblem.tsx`, l'icône d'onglet `app/icon.svg` et l'icône iPhone `app/apple-icon.png`.
 - **Couleurs** : `app/globals.css` (bloc « Palette Atelier 132 »).
 - **Vitesse du carrousel** : `--animate-marquee` dans `app/globals.css` (28s par défaut).
 

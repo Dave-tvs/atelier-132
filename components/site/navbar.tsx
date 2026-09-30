@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { SITE } from "@/lib/site";
+import { LogoEmblem } from "@/components/site/logo-emblem";
 import { cn } from "@/lib/utils";
 
 const LINKS = [
@@ -37,15 +38,18 @@ export function Navbar() {
             : "bg-transparent text-white"
         )}
       >
-        <a href="#top" className="flex flex-col leading-none" aria-label="Atelier 132, retour en haut">
-          <span className="font-serif text-xl tracking-wide">ATELIER 132</span>
-          <span
-            className={cn(
-              "mt-1 text-[10px] uppercase tracking-[0.25em]",
-              solid ? "text-muted-foreground" : "text-white/70"
-            )}
-          >
-            Coiffure · Esthétique
+        <a href="#top" className="flex items-center gap-3" aria-label="Atelier 132, retour en haut">
+          <LogoEmblem className="h-11 w-11 shrink-0 drop-shadow-sm" />
+          <span className="flex flex-col leading-none">
+            <span className="font-serif text-xl tracking-wide">ATELIER 132</span>
+            <span
+              className={cn(
+                "mt-1 text-[10px] uppercase tracking-[0.25em]",
+                solid ? "text-muted-foreground" : "text-white/70"
+              )}
+            >
+              Coiffure · Esthétique
+            </span>
           </span>
         </a>
 

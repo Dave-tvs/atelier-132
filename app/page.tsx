@@ -20,6 +20,7 @@ import { OpenStatus } from "@/components/site/open-status";
 import { Reveal } from "@/components/site/reveal";
 import { ServicesTabs } from "@/components/site/services-tabs";
 import { MobileCta } from "@/components/site/mobile-cta";
+import { LogoEmblem } from "@/components/site/logo-emblem";
 import { HOURS, REVIEWS, SITE, asset } from "@/lib/site";
 
 const PHOTOS: MarqueeImage[] = [
@@ -422,9 +423,12 @@ export default function Home() {
 
       <footer className="bg-ink px-6 pt-14 pb-28 text-cream/70 md:pb-14">
         <div className="mx-auto flex max-w-6xl flex-col gap-8 md:flex-row md:items-start md:justify-between">
-          <div>
-            <p className="font-serif text-2xl text-cream">ATELIER 132</p>
-            <p className="mt-1 text-xs uppercase tracking-[0.25em]">{SITE.tagline}</p>
+          <div className="flex items-center gap-4">
+            <LogoEmblem className="h-16 w-16 shrink-0" />
+            <div>
+              <p className="font-serif text-2xl text-cream">ATELIER 132</p>
+              <p className="mt-1 text-xs uppercase tracking-[0.25em]">{SITE.tagline}</p>
+            </div>
           </div>
           <div className="text-sm leading-relaxed">
             <p>{SITE.address.street}</p>

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { SITE } from "@/lib/site";
+import { LogoEmblem } from "@/components/site/logo-emblem";
 
 export const metadata: Metadata = {
   title: "Mentions légales · Atelier 132",
@@ -33,10 +34,13 @@ export default function MentionsLegales() {
     <>
       <header className="border-b border-border bg-white">
         <div className="mx-auto flex max-w-3xl items-center justify-between px-6 py-5">
-          <Link href="/" className="flex flex-col leading-none">
-            <span className="font-serif text-xl tracking-wide text-ink">ATELIER 132</span>
-            <span className="mt-1 text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
-              Coiffure · Esthétique
+          <Link href="/" className="flex items-center gap-3" aria-label="Atelier 132, accueil">
+            <LogoEmblem className="h-11 w-11 shrink-0" />
+            <span className="flex flex-col leading-none">
+              <span className="font-serif text-xl tracking-wide text-ink">ATELIER 132</span>
+              <span className="mt-1 text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
+                Coiffure · Esthétique
+              </span>
             </span>
           </Link>
           <Link
